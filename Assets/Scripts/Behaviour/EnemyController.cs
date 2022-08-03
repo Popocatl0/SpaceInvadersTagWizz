@@ -57,6 +57,7 @@ public class EnemyController : MonoBehaviour{
         if(!isEnabled) return;
         transform.Translate( Vector3.right * dir * Time.deltaTime * data.Speed);
         if(Mathf.Abs(transform.position.x) >= data.Limit){
+            transform.position = new Vector3(data.Limit * dir, transform.position.y);
             dir *= -1;
             transform.Translate( Vector3.down * data.VerticalSpacing);
         }
