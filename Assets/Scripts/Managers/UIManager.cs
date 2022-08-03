@@ -56,6 +56,7 @@ public class UIManager : MonoBehaviour{
     /// </summary>
     /// <param name="menu"></param>
     public void ChangeCanvas(CanvasGroup menu){
+        if(currentCanvas == menu) return;
         StartCoroutine(Fade(menu, 0.5f, 1));
         StartCoroutine(Fade(currentCanvas, 0.5f, 0));
 
